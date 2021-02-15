@@ -21,9 +21,9 @@ class RestaurantTest {
         Restaurant restaurant =new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
 
         Restaurant spiedRestaurant = Mockito.spy(restaurant);
-        LocalTime MockedTime = openingTime.plusHours(01);
+        LocalTime mockedTime = openingTime.plusHours(01);
 
-        Mockito.when(spiedRestaurant.getCurrentTime()).thenReturn(MockedTime);
+        Mockito.when(spiedRestaurant.getCurrentTime()).thenReturn(mockedTime);
         //System.out.println(spyedRestaurant.getCurrentTime());
         assertTrue(spiedRestaurant.isRestaurantOpen());
 
@@ -36,8 +36,8 @@ class RestaurantTest {
         Restaurant restaurant =new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
 
         Restaurant spiedRestaurant = Mockito.spy(restaurant);
-        LocalTime MockedTime = openingTime.minusHours(01);
-        Mockito.when(spiedRestaurant.getCurrentTime()).thenReturn(MockedTime);
+        LocalTime mockedTime = openingTime.minusHours(01);
+        Mockito.when(spiedRestaurant.getCurrentTime()).thenReturn(mockedTime);
 
         //System.out.println(spiedRestaurant.getCurrentTime());
         assertFalse(spiedRestaurant.isRestaurantOpen());
