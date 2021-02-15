@@ -96,13 +96,12 @@ class RestaurantTest {
         LocalTime closingTime = LocalTime.parse("20:30:01");
         Restaurant restaurant = new Restaurant("Amelie's cafe", "Chennai", openingTime, closingTime);
 
-        restaurant.addToMenu("Sweet corn soup", 100);
+        restaurant.addToMenu("Sweet corn soup", 1000);
         restaurant.addToMenu("Vegetable lasagne", 269);
         ArrayList<String> nameOfFood = new ArrayList<>();
         nameOfFood.add("Sweet corn soup");
         nameOfFood.add("Vegetable lasagne");
-        Item item = null;
-        restaurant.calculateCost(nameOfFood);
+        assertEquals(1269,restaurant.calculateCost(nameOfFood));
         ;
     }
 }

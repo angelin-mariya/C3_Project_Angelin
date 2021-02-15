@@ -9,6 +9,8 @@ public class Restaurant {
     public LocalTime openingTime;
     public LocalTime closingTime;
     private List<Item> menu = new ArrayList<Item>();
+    int cost = 0;
+    int total = 0;
 
 
 
@@ -69,7 +71,17 @@ public class Restaurant {
         return name;
     }
 
+    public int calculateCost(ArrayList<String> nameOfFood){
+        for (String food : nameOfFood){
+            //System.out.println(findItemByName(food).getPrice());
+            total = cost + findItemByName(food).getPrice();
+            cost = findItemByName(food).getPrice() ;
 
+            //System.out.println(cost+ findItemByName(food).getPrice());
+        }
+        return total;
+
+    }
 
 
     }
