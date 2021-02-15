@@ -33,7 +33,7 @@ public class Restaurant {
 
     }
 
-    public Item findItemByName(String itemName){
+    private Item findItemByName(String itemName){
         for(Item item: menu) {
             if(item.getName().equals(itemName))
                 return item;
